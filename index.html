@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Massey Method Generator</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+	<body>
+		<div id="intro">
+			<h1>Massey Method Generator</h1>
+			<p>The Massey method is a linear least squares numerical method used to generate rankings for players/teams given a data set of past matches. It takes into account match wins and points scored in order calculate these Massey rankings. This page will help create the MATLAB script to run and obtain the rankings. You can read more about the Massey method from a paper I wrote <a href="https://github.com/philipsdyoo/massey-tf2">here</a>.</p>
+			<p>You will copy the code produced to run for yourself. I didn't want to program matrix multiplication and Gaussian elimination partial pivoting, so code is produced instead for you to run.</p>
+			<button class="btn" id="intro-continue">Continue</button>
+		</div>
+		<div id="teams">
+			<h1>Enter the player/team names</h1>
+			<input type="text" class="textbox" id="new-team">
+			<button class="btn" id="add-team">Add</button>
+			<button class="btn" id="teams-continue">Continue</button>
+			<ul id="team-list"></ul>
+		</div>
+		<div id="matches">
+			<h1>Enter the match data</h1>
+			<label for="winner">Winner: </label>
+			<select id="winner" name="winner"></select>
+			<label for="loser">Loser: </label>
+			<select id="loser" name="loser"></select>
+			<br/><br/>
+			<label for="diff">Point Difference: </label>
+			<input type="text" class="textbox" id="diff" name="diff">
+			<button class="btn" id="add-match">Add</button>
+			<button class="btn" id="matches-continue">Finish</button>
+			<ul id="match-list"></ul>
+		</div>
+		<div id="finish">
+			<h1>MATLAB Code</h1>
+			<p>You can run the MATLAB script on your own machine or <a href="http://www.tutorialspoint.com/matlab/try_matlab.php" target="_blank">online</a>. Copy the code below.</p>
+			<div class="code-container">
+				<code id="matlab-code"></code>
+			</div>
+			<p>The team ratings from top to bottom are in the order:</p>
+			<ul id="team-final"></ul>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script type="text/javascript" src="massey.js"></script>
+	</body>
+</html>
